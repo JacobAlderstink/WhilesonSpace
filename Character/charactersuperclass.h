@@ -14,12 +14,12 @@ private:
 public:
     Character();
     double GetMass(){
-        return mass;    //should affect terminal velocity
+        return mass;
     }
 
 protected:
     facing WhichWay;
-    double mass;
+    double mass;            //should affect terminal velocity
     double velocityHor;
 
 
