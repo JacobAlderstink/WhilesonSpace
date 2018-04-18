@@ -18,6 +18,7 @@ private:
 
 public:
     CharacterSuperClass();
+
     Character();
     double GetMass()
     {
@@ -29,6 +30,8 @@ protected:
     double mass;            //should affect terminal velocity
     double velocityHor;
     int timeVarGravity;
+    double accGrav;
+    bool GravityOn;
 
 public slots:
     void Gravity();

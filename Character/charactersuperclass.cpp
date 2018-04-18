@@ -1,15 +1,24 @@
 #include "charactersuperclass.h"
-#include <QDebug>
 
 void CharacterSuperClass::Gravity()
 {
-    qDebug() << "Gravity called";
+    if(GravityOn == true)
+    {
+        if(accGrav*timeVarGravity < 1)      //terminal velocty control
+        {
+            timeVarGravity++;
+        }
+        setPos(x(),y()+accGrav*timeVarGravity);
+    }
 }
 
 CharacterSuperClass::CharacterSuperClass()
 {
  setRect( 0, 0, 10, 15 );
  mass = 10;
+ timeVarGravity = 0;
+ accGrav = 0.01;        //totally changeable, essentially the rate of falling caused by gravity
+ GravityOn = true;
 
  TimerGravity =  new QTimer();
 
@@ -17,7 +26,7 @@ CharacterSuperClass::CharacterSuperClass()
  connect(TimerGravity,SIGNAL(timeout()),this,SLOT(Gravity()));
 
  TimerGravity->start(3);
- timeVarGravity = 0;
 
 
-}
+
+};
