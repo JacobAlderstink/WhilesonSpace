@@ -1,8 +1,9 @@
 #ifndef YOULER_H
 #define YOULER_H
 
+#include <charactersuperclass.h>
 
-class Youler
+class Youler: public CharacterSuperClass
 {
 public:
     Youler();

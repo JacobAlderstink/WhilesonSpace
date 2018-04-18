@@ -1,6 +1,8 @@
 #include "youler.h"
 
-Youler::Youler()
+
+
+Youler::Youler(): CharacterSuperClass()
 {
 
 }
