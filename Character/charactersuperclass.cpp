@@ -12,6 +12,26 @@ void CharacterSuperClass::Gravity()
     }
 }
 
+void CharacterSuperClass::MoveR()
+{
+
+}
+
+void CharacterSuperClass::MoveD()
+{
+
+}
+
+void CharacterSuperClass::MoveL()
+{
+
+}
+
+void CharacterSuperClass::MoveU()
+{
+
+}
+
 CharacterSuperClass::CharacterSuperClass(Game *game)
 {
  setRect( 0, 0, 10, 15 );
@@ -42,26 +62,45 @@ void CharacterSuperClass::keyPressEvent(QKeyEvent *event)
     if(event->key() == Qt::Key_D)
     {
         //move Right
-        setPos(x(),y());
+        MoveR = true;
     }
     if(event->key() == Qt::Key_S)
     {
         //move down
-        setPos(x(),y());
+        MoveD = true;
     }
     if(event->key() == Qt::Key_A)
     {
-        //move right
-        setPos(x(),y());
+        //move Left
+        MoveL = true;
     }
     if(event->key() == Qt::Key_W)
     {
         //Move Up
-        setPos(x(),y());
+        MoveU = true;
     }
 }
 
 void CharacterSuperClass::keyReleaseEvent(QKeyEvent *event)
 {
-
+    if(event->key() == Qt::Key_D)
+    {
+        //move Right
+        MoveR = false;
+    }
+    if(event->key() == Qt::Key_S)
+    {
+        //move down
+        MoveD = false;
+    }
+    if(event->key() == Qt::Key_A)
+    {
+        //move Left
+        MoveL = false;
+    }
+    if(event->key() == Qt::Key_W)
+    {
+        //Move Up
+        MoveU = false;
+    }
 };
