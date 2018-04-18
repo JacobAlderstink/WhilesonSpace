@@ -10,13 +10,13 @@ MainMenu::MainMenu(Game* game)
 
 void MainMenu::displayStart(){
     MMgame->getScene()->clear();
-    Button* playButton = new Button(QString("Play"));
+    Button* playButton = new Button(QString("Play"),MMgame);
     int btnX = MMgame->getScene()->width()/2 - playButton->boundingRect().width()/2;
     int btnY = MMgame->getScene()->height()/3;
     playButton->setPos(btnX,btnY);
     MMgame->getScene()->addItem(playButton);
     connect(playButton,SIGNAL(clicked()),MMgame,SLOT(start()));
-    Button* DisplayOptionsButton = new Button(QString("Display Options"));
+    Button* DisplayOptionsButton = new Button(QString("Display Options"),MMgame);
     btnX = MMgame->getScene()->width()/2 - DisplayOptionsButton->boundingRect().width()/2;
     btnY = 2*MMgame->getScene()->height()/3;
     DisplayOptionsButton->setPos(btnX,btnY);
@@ -28,23 +28,23 @@ void MainMenu::displayStart(){
 void MainMenu::displayOptions(){
     MMgame->getScene()->clear();
 
-    Button* option1Button = new Button(QString("3840 x 2160"));
+    Button* option1Button = new Button(QString("3840 x 2160"),MMgame);
     int btnX = MMgame->getScene()->width()/2 - option1Button->boundingRect().width()/2;
     int btnY = MMgame->getScene()->height()/5;
     option1Button->setPos(btnX,btnY);
 
-    Button* option2Button = new Button(QString("1920 x 1080"));
+    Button* option2Button = new Button(QString("1920 x 1080"),MMgame);
     btnX = MMgame->getScene()->width()/2 - option1Button->boundingRect().width()/2;
     btnY = 2*MMgame->getScene()->height()/5;
     option2Button->setPos(btnX,btnY);
 
 
-    Button* option3Button = new Button(QString("1080 x 720"));
+    Button* option3Button = new Button(QString("1080 x 720"),MMgame);
     btnX = MMgame->getScene()->width()/2 - option1Button->boundingRect().width()/2;
     btnY = 3*MMgame->getScene()->height()/5;
     option3Button->setPos(btnX,btnY);
 
-    Button* option4Button = new Button(QString("back"));
+    Button* option4Button = new Button(QString("back"),MMgame);
     btnX = MMgame->getScene()->width()/2 - option4Button->boundingRect().width()/2;
     btnY = 4*MMgame->getScene()->height()/5;
     option4Button->setPos(btnX,btnY);

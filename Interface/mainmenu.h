@@ -17,11 +17,11 @@ private:
 
 signals:
 public slots:
-    void displayStart();
+   void displayStart();
     void displayOptions();
-    void DOption1();
-    void DOption2();
-    void DOption3();
+  void DOption1();
+  void DOption2();
+  void DOption3();
 };
 
 #endif // MAINMENU_H

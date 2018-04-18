@@ -4,14 +4,14 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsTextItem>
 #include <QObject>
-
+#include <game.h>
 
 class Button : public QObject, public QGraphicsRectItem
 {
 Q_OBJECT
 public:
     //constructor
-    Button(QString name, QGraphicsItem* parent = NULL);
+    Button(QString name, Game* game, QGraphicsItem* parent = NULL);
     //methods
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void hoverEnterEvent(QGraphicsSceneHoverEvent *event);

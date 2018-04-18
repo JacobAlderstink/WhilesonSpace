@@ -1,10 +1,11 @@
 #include "button.h"
 #include <QGraphicsTextItem>
 #include <QBrush>
+#include "game.h"
+Button::Button(QString name, Game* game, QGraphicsItem *parent): QGraphicsRectItem(parent){
 
-Button::Button(QString name, QGraphicsItem *parent): QGraphicsRectItem(parent){
     //draw the rect
-    setRect(0,0,200,50);
+    setRect(0,0,game->getScene()->width()/10,game->getScene()->height()/23);
     QBrush brush;
     brush.setStyle(Qt::SolidPattern);
     brush.setColor(Qt::darkCyan);
