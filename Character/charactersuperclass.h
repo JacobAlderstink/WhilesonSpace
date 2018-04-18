@@ -19,7 +19,6 @@ private:
 public:
     CharacterSuperClass();
 
-    Character();
     double GetMass()
     {
         return mass;
