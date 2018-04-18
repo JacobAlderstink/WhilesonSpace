@@ -29,10 +29,12 @@ SOURCES += \
         main.cpp \
         game.cpp \
     Map/planetsuperclass.cpp \
-    Character/charactersuperclass.cpp
+    Character/charactersuperclass.cpp \
+    Character/Youler/youler.cpp
 
 HEADERS += \
         game.h \
     Map/planetsuperclass.h \
-    Character/charactersuperclass.h
+    Character/charactersuperclass.h \
+    Character/Youler/youler.h
 
