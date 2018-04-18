@@ -44,6 +44,11 @@ protected:
 public slots:
     void Gravity();
 
+    void MoveRight();
+    void MoveDown();
+    void MoveLeft();
+    void MoveUp();
+
 };
 
 #endif // CHARACTER_H

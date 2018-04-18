@@ -12,24 +12,26 @@ void CharacterSuperClass::Gravity()
     }
 }
 
-void CharacterSuperClass::MoveR()
+void CharacterSuperClass::MoveRight()
 {
-
+    if(MoveR == true)
+        setPos(x()+velocityHor,y());
 }
 
-void CharacterSuperClass::MoveD()
+void CharacterSuperClass::MoveDown()
 {
-
+    setPos(x(),y());
 }
 
-void CharacterSuperClass::MoveL()
+void CharacterSuperClass::MoveLeft()
 {
-
+    if(MoveL == true)
+        setPos(x()-velocityHor,y());
 }
 
-void CharacterSuperClass::MoveU()
+void CharacterSuperClass::MoveUp()
 {
-
+    setPos(x(),y());
 }
 
 CharacterSuperClass::CharacterSuperClass(Game *game)

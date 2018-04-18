@@ -30,7 +30,7 @@ Game::Game()
 void Game::start(){
     scene->clear();
 
-        TimerGravity->start(3);
+    TimerGravity->start(3);
 
     CharacterSuperClass *Character = new Youler(this);
     Character->setPos(200,200);
