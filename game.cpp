@@ -35,6 +35,8 @@ void Game::start(){
     CharacterSuperClass *Character = new Youler(this);
     Character->setPos(200,200);
     scene->addItem(Character);
+    Character->setFlag(QGraphicsItem::ItemIsFocusable);
+    Character->setFocus();
 
 
 

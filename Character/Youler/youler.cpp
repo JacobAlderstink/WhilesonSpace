@@ -6,7 +6,7 @@ Youler::Youler(Game *Chargame): CharacterSuperClass(Chargame)
 {
     //setting specific Youler Properties
     mass = 1;
-    velocityHor = 20;
+    velocityHor = 1;
 
     connect(Chargame->TimerGravity,SIGNAL(timeout()),this,SLOT(MoveUp()));
     connect(Chargame->TimerGravity,SIGNAL(timeout()),this,SLOT(MoveDown()));
