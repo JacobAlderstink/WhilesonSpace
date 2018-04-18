@@ -19,10 +19,32 @@ Game::Game()
     setFixedSize(1500,1500);                              // Will need to be changed to setFixedHeight(HEIGHT)
 
     //Just here for gravity testing purposes
+  /*  CharacterSuperClass *Character = new CharacterSuperClass();
+    Character->setPos(200,200);
+    scene->addItem(Character);
+*/
+    show();
+
+}
+
+void Game::start(){
+    scene->clear();
     CharacterSuperClass *Character = new CharacterSuperClass();
     Character->setPos(200,200);
     scene->addItem(Character);
 
-    show();
+
 
 }
+
+void Game::mainMenu(){
+  interface = new MInterface(this);
+
+
+}
+
+QGraphicsScene* Game::getScene(){
+  return scene;
+
+}
+

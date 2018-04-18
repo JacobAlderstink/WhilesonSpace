@@ -11,7 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Game
 TEMPLATE = app
 
-INCLUDEPATH = . src src/Character src/Map src/Objects
+INCLUDEPATH = . Character Map Objects Interface
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -30,11 +30,15 @@ SOURCES += \
         game.cpp \
     Map/planetsuperclass.cpp \
     Character/charactersuperclass.cpp \
-    Character/Youler/youler.cpp
+    Interface/button.cpp \
+    Interface/mainmenu.cpp \
+    Interface/minterface.cpp
 
 HEADERS += \
         game.h \
     Map/planetsuperclass.h \
     Character/charactersuperclass.h \
-    Character/Youler/youler.h
+    Interface/button.h \
+    Interface/mainmenu.h \
+    Interface/minterface.h
 
