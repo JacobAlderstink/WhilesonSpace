@@ -10,14 +10,18 @@ class MainMenu : public QObject
 public:
     explicit MainMenu(Game* game);
     int player;
+
 private:
     Game* MMgame;
    // void displaystart();
 
 signals:
 public slots:
-  //void displaystart();
-
+   void displayStart();
+    void displayOptions();
+  void DOption1();
+  void DOption2();
+  void DOption3();
 };
 
 #endif // MAINMENU_H
