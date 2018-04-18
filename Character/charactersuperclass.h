@@ -5,6 +5,7 @@
 #include <QObject>
 #include "game.h"
 #include <QTimer>
+#include <QKeyEvent>
 
 class Game;
 
@@ -14,15 +15,17 @@ class CharacterSuperClass : public QObject, public QGraphicsRectItem
 {
     Q_OBJECT
 private:
-    QTimer * TimerGravity;
+    Game * Chargame;
 
 public:
-    CharacterSuperClass();
+    CharacterSuperClass(Game *);
 
     double GetMass()
     {
         return mass;
     }
+    void keyPressEvent(QKeyEvent *event);
+    void keyReleaseEvent(QKeyEvent *event);
 
 protected:
     facing WhichWay;
@@ -31,6 +34,12 @@ protected:
     int timeVarGravity;
     double accGrav;
     bool GravityOn;
+
+    //bool for movement
+    bool MoveR;
+    bool MoveD;
+    bool MoveL;
+    bool MoveU;
 
 public slots:
     void Gravity();

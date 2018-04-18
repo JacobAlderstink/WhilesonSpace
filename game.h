@@ -4,6 +4,7 @@
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include "minterface.h"
+#include <QTimer>
 
 class MInterface;
 class Game: public QGraphicsView
@@ -13,9 +14,11 @@ private:
     QGraphicsScene * scene;
     MInterface* interface;
 
+
 public:
     Game();
     QGraphicsScene* getScene();
+    QTimer *TimerGravity;
 
 
     void mainMenu();

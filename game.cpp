@@ -1,5 +1,6 @@
 #include "game.h"
 #include <Character/charactersuperclass.h>
+#include <Youler/youler.h>
 
 Game::Game()
 {
@@ -19,18 +20,20 @@ Game::Game()
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     //setFixedSize(1920,1500);                              // Will need to be changed to setFixedHeight(HEIGHT)
 
-    //Just here for gravity testing purposes
-  /*  CharacterSuperClass *Character = new CharacterSuperClass();
-    Character->setPos(200,200);
-    scene->addItem(Character);
-*/
     showFullScreen();
+
+    TimerGravity =  new QTimer();
+
 
 }
 
 void Game::start(){
     scene->clear();
-    CharacterSuperClass *Character = new CharacterSuperClass();
+
+    QTimer * TimerGravity;
+    TimerGravity->start(3);
+
+    CharacterSuperClass *Character = new Youler(this);
     Character->setPos(200,200);
     scene->addItem(Character);
 

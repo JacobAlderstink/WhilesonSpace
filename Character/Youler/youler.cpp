@@ -2,7 +2,9 @@
 
 
 
-Youler::Youler(): CharacterSuperClass()
+Youler::Youler(Game *Chargame): CharacterSuperClass(Chargame)
 {
+    //setting specific Youler Properties
+    mass = 1;
 
 }

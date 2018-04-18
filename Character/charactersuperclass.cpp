@@ -8,11 +8,11 @@ void CharacterSuperClass::Gravity()
         {
             timeVarGravity++;
         }
-        setPos(x(),y()+accGrav*timeVarGravity);
+        setPos(x(),y()+mass*accGrav*timeVarGravity);
     }
 }
 
-CharacterSuperClass::CharacterSuperClass()
+CharacterSuperClass::CharacterSuperClass(Game *game)
 {
  setRect( 0, 0, 10, 15 );
  mass = 10;
@@ -20,13 +20,48 @@ CharacterSuperClass::CharacterSuperClass()
  accGrav = 0.01;        //totally changeable, essentially the rate of falling caused by gravity
  GravityOn = true;
 
- TimerGravity =  new QTimer();
+ Chargame = game;
 
 
- connect(TimerGravity,SIGNAL(timeout()),this,SLOT(Gravity()));
 
- TimerGravity->start(3);
+    connect(game->TimerGravity,SIGNAL(timeout()),this,SLOT(Gravity()));
 
 
+    MoveR = false;
+    MoveD = false;
+    MoveL = false;
+    MoveU = false;
+
+
+
+
+}
+
+void CharacterSuperClass::keyPressEvent(QKeyEvent *event)
+{
+    if(event->key() == Qt::Key_D)
+    {
+        //move Right
+        setPos(x(),y());
+    }
+    if(event->key() == Qt::Key_S)
+    {
+        //move down
+        setPos(x(),y());
+    }
+    if(event->key() == Qt::Key_A)
+    {
+        //move right
+        setPos(x(),y());
+    }
+    if(event->key() == Qt::Key_W)
+    {
+        //Move Up
+        setPos(x(),y());
+    }
+}
+
+void CharacterSuperClass::keyReleaseEvent(QKeyEvent *event)
+{
 
 };
