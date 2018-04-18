@@ -32,7 +32,8 @@ SOURCES += \
     Character/charactersuperclass.cpp \
     Interface/button.cpp \
     Interface/mainmenu.cpp \
-    Interface/minterface.cpp
+    Interface/minterface.cpp \
+    Character/Youler/youler.cpp
 
 HEADERS += \
         game.h \
@@ -40,5 +41,6 @@ HEADERS += \
     Character/charactersuperclass.h \
     Interface/button.h \
     Interface/mainmenu.h \
-    Interface/minterface.h
+    Interface/minterface.h \
+    Character/Youler/youler.h
 
