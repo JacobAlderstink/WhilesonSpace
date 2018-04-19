@@ -43,7 +43,12 @@ void CharacterSuperClass::MoveUp()
 
 CharacterSuperClass::CharacterSuperClass(Game *game)
 {
+
+    CharWidth = (2/45);
+    CharHeight = (4/39);
+
     setRect( 0, 0, game->getScene()->width()*2/45, game->getScene()->height()*4/39 );
+
     mass = 10;
     timeVarGravity = 0;
     accGrav = 0.1;        //totally changeable, essentially the rate of falling caused by gravity

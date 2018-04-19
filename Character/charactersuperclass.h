@@ -15,7 +15,7 @@ class CharacterSuperClass : public QObject, public QGraphicsRectItem
 {
     Q_OBJECT
 private:
-    Game * Chargame;
+
 
 public:
     CharacterSuperClass(Game *);
@@ -37,6 +37,11 @@ protected:
     int JumpCount;
     int JumpStrength;
     int TerminalVelo;
+    Game * Chargame;
+
+    //character dimensions
+    double CharWidth;
+    double CharHeight;
 
     //bool for movement
     bool MoveR;
