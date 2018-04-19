@@ -34,6 +34,9 @@ protected:
     int timeVarGravity;
     double accGrav;
     bool GravityOn;
+    int JumpCount;
+    int JumpStrength;
+    int TerminalVelo;
 
     //bool for movement
     bool MoveR;
@@ -47,7 +50,7 @@ public slots:
     void MoveRight();
     void MoveDown();
     void MoveLeft();
-    void MoveUp();
+    void MoveUp();      //Jump
 
 };
 

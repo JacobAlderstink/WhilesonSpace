@@ -4,7 +4,11 @@ void CharacterSuperClass::Gravity()
 {
     if(GravityOn == true)
     {
-        if(accGrav*timeVarGravity < 1)      //terminal velocty control
+        if(MoveU == true && accGrav*timeVarGravity < JumpStrength+TerminalVelo)
+        {
+            timeVarGravity++;
+        }
+        else if(accGrav*timeVarGravity < 3)      //terminal velocty control
         {
             timeVarGravity++;
         }
@@ -31,31 +35,32 @@ void CharacterSuperClass::MoveLeft()
 
 void CharacterSuperClass::MoveUp()
 {
-    setPos(x(),y());
+    if(MoveU == true)
+    {
+        setPos(x(),y()-JumpStrength);
+    }
 }
 
 CharacterSuperClass::CharacterSuperClass(Game *game)
 {
- setRect( 0, 0, game->getScene()->width()/15, game->getScene()->height()/13 );
- mass = 10;
- timeVarGravity = 0;
- accGrav = 0.01;        //totally changeable, essentially the rate of falling caused by gravity
- GravityOn = true;
+    setRect( 0, 0, game->getScene()->width()*2/45, game->getScene()->height()*4/39 );
+    mass = 10;
+    timeVarGravity = 0;
+    accGrav = 0.1;        //totally changeable, essentially the rate of falling caused by gravity
+    GravityOn = true;
+    JumpStrength = 5;
+    TerminalVelo = 3;
 
- Chargame = game;
+    Chargame = game;
 
-
-
-    connect(game->TimerGravity,SIGNAL(timeout()),this,SLOT(Gravity()));
-
+    JumpCount = 0;
 
     MoveR = false;
     MoveD = false;
     MoveL = false;
     MoveU = false;
 
-
-
+    connect(game->TimerGravity,SIGNAL(timeout()),this,SLOT(Gravity()));
 
 }
 
@@ -79,7 +84,12 @@ void CharacterSuperClass::keyPressEvent(QKeyEvent *event)
     if(event->key() == Qt::Key_W)
     {
         //Move Up
-        MoveU = true;
+        if(JumpCount < 2)
+        {
+            MoveU = true;
+            timeVarGravity = 0;
+            JumpCount++;
+        }
     }
 }
 
@@ -103,6 +113,6 @@ void CharacterSuperClass::keyReleaseEvent(QKeyEvent *event)
     if(event->key() == Qt::Key_W)
     {
         //Move Up
-        MoveU = false;
+        //MoveU = false;
     }
 };

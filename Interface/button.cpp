@@ -42,3 +42,4 @@ void Button::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
     brush.setColor(Qt::darkCyan);
     setBrush(brush);
 }
+
