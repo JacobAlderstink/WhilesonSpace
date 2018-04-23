@@ -38,10 +38,11 @@ protected:
     int JumpStrength;
     int TerminalVelo;
     Game * Chargame;
+    double rationConverter;
 
     //character dimensions
-    double CharWidth;
-    double CharHeight;
+    qreal CharWidth;
+    qreal CharHeight;
 
     //bool for movement
     bool MoveR;

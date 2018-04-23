@@ -1,4 +1,5 @@
 #include "charactersuperclass.h"
+#include <QDebug>
 
 void CharacterSuperClass::Gravity()
 {
@@ -43,12 +44,12 @@ void CharacterSuperClass::MoveUp()
 
 CharacterSuperClass::CharacterSuperClass(Game *game)
 {
-
-    CharWidth = (2/45);
-    CharHeight = (4/39);
-
     setRect( 0, 0, game->getScene()->width()*2/45, game->getScene()->height()*4/39 );
 
+
+    Chargame = game;
+
+    rationConverter = 10.0/2160.0;
     mass = 10;
     timeVarGravity = 0;
     accGrav = 0.1;        //totally changeable, essentially the rate of falling caused by gravity
@@ -56,7 +57,6 @@ CharacterSuperClass::CharacterSuperClass(Game *game)
     JumpStrength = 5;
     TerminalVelo = 3;
 
-    Chargame = game;
 
     JumpCount = 0;
 
@@ -96,6 +96,10 @@ void CharacterSuperClass::keyPressEvent(QKeyEvent *event)
             JumpCount++;
         }
     }
+    if(event->key() == Qt::Key_Space)
+    {
+        Chargame->mainMenu();
+    }
 }
 
 void CharacterSuperClass::keyReleaseEvent(QKeyEvent *event)
@@ -117,7 +121,5 @@ void CharacterSuperClass::keyReleaseEvent(QKeyEvent *event)
     }
     if(event->key() == Qt::Key_W)
     {
-        //Move Up
-        //MoveU = false;
     }
 };
