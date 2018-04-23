@@ -29,16 +29,21 @@ public:
 
 protected:
     facing WhichWay;
-    double mass;            //should affect terminal velocity
-    double velocityHor;
-    int timeVarGravity;
-    double accGrav;
+    Game * Chargame;
+
     bool GravityOn;
+
+    int timeVarGravity;
     int JumpCount;
     int JumpStrength;
     int TerminalVelo;
-    Game * Chargame;
-    double rationConverter;
+
+    double ratioConverter;
+    double accGrav;
+    double mass;            //should affect terminal velocity
+    double velocityHor;
+
+
 
     //character dimensions
     qreal CharWidth;

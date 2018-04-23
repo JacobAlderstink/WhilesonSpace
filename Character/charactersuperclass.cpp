@@ -49,7 +49,7 @@ CharacterSuperClass::CharacterSuperClass(Game *game)
 
     Chargame = game;
 
-    rationConverter = 10.0/2160.0;
+    ratioConverter = Chargame->getScene()->width()/2160.0;
     mass = 10;
     timeVarGravity = 0;
     accGrav = 0.1;        //totally changeable, essentially the rate of falling caused by gravity
