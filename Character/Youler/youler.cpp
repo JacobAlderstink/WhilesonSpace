@@ -10,7 +10,6 @@ Youler::Youler(Game *Chargame): CharacterSuperClass(Chargame)
     CharWidth = 40*ratioConverter;
     CharHeight = 80*ratioConverter;
     JumpStrength = 7*ratioConverter;
-    Chargame->getScene()->height();
 
     //Painting the boy
     QBrush brushBody;
@@ -18,7 +17,7 @@ Youler::Youler(Game *Chargame): CharacterSuperClass(Chargame)
     brushBody.setColor(Qt::green);
     setBrush(brushBody);
 
-    setRect( 0, 0, CharWidth, CharHeight );
+    setRect( 0, 0, CharWidth, CharHeight);
 
     connect(Chargame->TimerGravity,SIGNAL(timeout()),this,SLOT(MoveUp()));
     connect(Chargame->TimerGravity,SIGNAL(timeout()),this,SLOT(MoveDown()));
