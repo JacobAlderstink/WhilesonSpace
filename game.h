@@ -19,10 +19,9 @@ public:
     Game();
     QGraphicsScene* getScene();
     QTimer *TimerGravity;
-
+    double ratioConverter;
 
     void mainMenu();
-
 public slots:
     void start();
 };

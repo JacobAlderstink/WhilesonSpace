@@ -34,7 +34,7 @@ SOURCES += \
     Interface/mainmenu.cpp \
     Interface/minterface.cpp \
     Character/Youler/youler.cpp \
-    Map/chuncklist.cpp \
+    Map/chunck.cpp \
     Map/planetexample.cpp \
     Map/chunckblock.cpp
 
@@ -46,7 +46,7 @@ HEADERS += \
     Interface/mainmenu.h \
     Interface/minterface.h \
     Character/Youler/youler.h \
-    Map/chuncklist.h \
+    Map/chunck.h \
     Map/planetexample.h \
     Map/chunckblock.h
 

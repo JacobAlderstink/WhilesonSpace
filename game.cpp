@@ -1,7 +1,8 @@
 #include "game.h"
 #include <Character/charactersuperclass.h>
 #include <Youler/youler.h>
-
+#include "planetexample.h"
+#include "planetsuperclass.h"
 Game::Game()
 {
 /*Main Menu
@@ -23,7 +24,7 @@ Game::Game()
     showFullScreen();
 
     TimerGravity =  new QTimer();
-
+    ratioConverter = getScene()->width()/2160.0;
 
 }
 
@@ -38,7 +39,7 @@ void Game::start(){
     Character->setFlag(QGraphicsItem::ItemIsFocusable);
     Character->setFocus();
 
-
+    PlanetSuperClass* planet = new PlanetExample(scene);
 
 }
 

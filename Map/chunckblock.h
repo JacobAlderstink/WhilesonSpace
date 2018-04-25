@@ -13,6 +13,12 @@ class ChunckBlock : public QObject, public QGraphicsRectItem
     Q_OBJECT
 public:
     ChunckBlock(chunck* chunckson, QGraphicsScene* scenepas);
+    int getStartingY(){
+        return Y;
+    }
+    int getStartingX(){
+        return X;
+    }
 
 private:
     QGraphicsScene* scene;
