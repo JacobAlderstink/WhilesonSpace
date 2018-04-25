@@ -6,12 +6,10 @@ Button::Button(QString name, Game* game, QGraphicsItem *parent): QGraphicsRectIt
 
     //draw the rect
     setRect(0,0,game->getScene()->width()/10,game->getScene()->height()/23);
-    brushLeave.setStyle(Qt::SolidPattern);
-    brushEnter.setStyle(Qt::SolidPattern);
-    brushLeave.setColor(Qt::darkCyan);
-    brushEnter.setColor(Qt::cyan);
-
-    //Change pen
+    QBrush brush;
+    brush.setStyle(Qt::SolidPattern);
+    brush.setColor(Qt::darkCyan);
+    setBrush(brush);
 
     //draw text
     text = new QGraphicsTextItem(name,this);
@@ -30,11 +28,18 @@ void Button::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void Button::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
-    setBrush(brushEnter);
+ //change color to Cyan
+    QBrush brush;
+    brush.setStyle(Qt::SolidPattern);
+    brush.setColor(Qt::cyan);
+    setBrush(brush);
 }
 
 void Button::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
-    setBrush(brushLeave);
+    QBrush brush;
+    brush.setStyle(Qt::SolidPattern);
+    brush.setColor(Qt::darkCyan);
+    setBrush(brush);
 }
 
