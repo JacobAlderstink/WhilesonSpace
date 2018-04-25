@@ -1,6 +1,6 @@
 #include "charactersuperclass.h"
 #include <QDebug>
-#include "chunckblock.h"
+
 void CharacterSuperClass::Gravity()
 {
     if(GravityOn == true)
@@ -19,17 +19,6 @@ void CharacterSuperClass::Gravity()
 
 void CharacterSuperClass::MoveRight()
 {
-    GravityOn=true;
-    QList<QGraphicsItem *> colliding_items = collidingItems(/*Q_OBJECT*/);
-       for(int i = 0, n = colliding_items.size(); i < n; ++i)
-       {
-            if(typeid(*(colliding_items[i]))==typeid(ChunckBlock))
-            {
-                GravityOn = false;
-            }
-
-       }
-
        if(MoveR == true)
         setPos(x()+velocityHor,y());
 }
