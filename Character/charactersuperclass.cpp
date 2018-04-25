@@ -1,8 +1,19 @@
 #include "charactersuperclass.h"
 #include <QDebug>
 #include "chunckblock.h"
+
 void CharacterSuperClass::Gravity()
 {
+    //checking for collisions
+    QList<QGraphicsItem *> colliding_items = collidingItems();
+    for(int i = 0, n = colliding_items.size(); i<n; i++)
+    {
+        if(typeid(*(colliding_items[i])) == typeid(ChunckBlock))
+        {
+            setPos(x(),y()-mass*accGrav*timeVarGravity);
+            MoveU = false;
+        }
+    }
     if(GravityOn == true)
     {
         if(MoveU == true && accGrav*timeVarGravity < JumpStrength+TerminalVelo)
@@ -38,6 +49,7 @@ void CharacterSuperClass::MoveUp()
 {
     if(MoveU == true)
     {
+        GravityOn = true;
         setPos(x(),y()-JumpStrength);
     }
 }
@@ -75,6 +87,7 @@ void CharacterSuperClass::keyPressEvent(QKeyEvent *event)
     {
         //move Right
         MoveR = true;
+
     }
     if(event->key() == Qt::Key_S)
     {
@@ -88,8 +101,9 @@ void CharacterSuperClass::keyPressEvent(QKeyEvent *event)
     }
     if(event->key() == Qt::Key_W)
     {
+               setPos(x(),y()-5);
         //Move Up
-        if(JumpCount < 2)
+        if(JumpCount < 400)
         {
             MoveU = true;
             timeVarGravity = 0;
