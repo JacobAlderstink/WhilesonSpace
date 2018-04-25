@@ -2,7 +2,7 @@
 
 ChunckBlock::ChunckBlock(chunck *chunckson, QGraphicsScene *scenepass): QObject(NULL)
 {
-    int blocksPerChunk = 600;
+    int blocksPerChunk = 30;
     scene= scenepass;
     ChunckBlock* curr = this;
     ChunckBlock* prev = curr;

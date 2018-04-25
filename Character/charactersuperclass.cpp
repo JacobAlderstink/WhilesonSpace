@@ -10,8 +10,11 @@ void CharacterSuperClass::Gravity()
     {
         if(typeid(*(colliding_items[i])) == typeid(ChunckBlock))
         {
-            setPos(x(),y()-mass*accGrav*timeVarGravity);
-            MoveU = false;
+            if(GravityOn == true)
+            {
+                GravityOn = false;
+                MoveU = false;
+            }
         }
     }
     if(GravityOn == true)
@@ -101,7 +104,6 @@ void CharacterSuperClass::keyPressEvent(QKeyEvent *event)
     }
     if(event->key() == Qt::Key_W)
     {
-               setPos(x(),y()-5);
         //Move Up
         if(JumpCount < 400)
         {
