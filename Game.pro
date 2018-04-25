@@ -33,7 +33,10 @@ SOURCES += \
     Interface/button.cpp \
     Interface/mainmenu.cpp \
     Interface/minterface.cpp \
-    Character/Youler/youler.cpp
+    Character/Youler/youler.cpp \
+    Map/chuncklist.cpp \
+    Map/planetexample.cpp \
+    Map/chunckblock.cpp
 
 HEADERS += \
         game.h \
@@ -42,5 +45,8 @@ HEADERS += \
     Interface/button.h \
     Interface/mainmenu.h \
     Interface/minterface.h \
-    Character/Youler/youler.h
+    Character/Youler/youler.h \
+    Map/chuncklist.h \
+    Map/planetexample.h \
+    Map/chunckblock.h
 
