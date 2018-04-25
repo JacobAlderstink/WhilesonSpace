@@ -23,6 +23,7 @@ Game::Game()
     showFullScreen();
 
     TimerGravity =  new QTimer();
+    ratioConverter = getScene()->width()/2160.0;
 
 
 }
@@ -40,6 +41,11 @@ void Game::start(){
 
 
 
+}
+
+void Game::closeGame()
+{
+ exit(1);
 }
 
 void Game::mainMenu(){

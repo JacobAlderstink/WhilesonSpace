@@ -4,6 +4,7 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsTextItem>
 #include <QObject>
+#include <QBrush>
 #include <game.h>
 
 class Button : public QObject, public QGraphicsRectItem
@@ -16,6 +17,8 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
     void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
+    QBrush brushEnter;
+    QBrush brushLeave;
 signals:
     void clicked();
 
