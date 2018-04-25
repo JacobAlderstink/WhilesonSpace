@@ -1,6 +1,7 @@
 #include "planetsuperclass.h"
 
-PlanetSuperClass::PlanetSuperClass()
+PlanetSuperClass::PlanetSuperClass(QGraphicsScene* scenePass)
 {
- gravity = 5;
+    scene= scenePass;
+    gravity = 5;
 }
