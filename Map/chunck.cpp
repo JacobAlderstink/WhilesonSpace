@@ -9,18 +9,19 @@ chunck::chunck(int planetSize, int yLowerBound, int yUpperBound, QGraphicsScene*
     chunck* source = this;
     chunck* start = this;
     scene= scenePass;
-    start->startingY=1060;
+    start->startingY=scene->height()-scene->width()/30;
     for(int i = 0; i < planetSize; i++){
-        start->startingX = 1920*i;
+        start->startingX = scene->width()*i;
         int value = rand()%yUpperBound;
         start->endingY = value;
         start->endingY += yLowerBound;
         startChunck = new ChunckBlock(start, scene);
 
+        int temp = start->endingY;
         start->next = new chunck();
         start = start->next;
-        start->startingY = value;
-
+        start->startingY = temp;
+       // startChunck = new ChunckBlock(start, scene);
     }
 
     start->endingY = source->startingY;
