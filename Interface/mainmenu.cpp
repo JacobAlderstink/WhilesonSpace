@@ -16,16 +16,12 @@ void MainMenu::displayStart(){
     int btnY = MMgame->getScene()->height()/3;
     playButton->setPos(btnX,btnY);
     playButton->setBrush(playButton->brushLeave);
-    MMgame->getScene()->addItem(playButton);
-    connect(playButton,SIGNAL(clicked()),MMgame,SLOT(start()));
 
     Button* DisplayOptionsButton = new Button(QString("Display Options"),MMgame);
     btnX = MMgame->getScene()->width()/2 - DisplayOptionsButton->boundingRect().width()/2;
     btnY = 2*MMgame->getScene()->height()/3;
     DisplayOptionsButton->setPos(btnX,btnY);
     DisplayOptionsButton->setBrush(DisplayOptionsButton->brushLeave);
-    MMgame->getScene()->addItem(DisplayOptionsButton);
-    connect(DisplayOptionsButton,SIGNAL(clicked()),this,SLOT(displayOptions()));
 
     Button* Close = new Button(QString("X"),MMgame);
     btnX = MMgame->getScene()->width()*11/12 - Close->boundingRect().width()/2;
@@ -34,8 +30,15 @@ void MainMenu::displayStart(){
     Close->brushLeave.setColor(Qt::red);
     Close->brushEnter.setColor(Qt::darkRed);
     Close->setBrush(Close->brushLeave);
+
+    MMgame->getScene()->addItem(playButton);
+    MMgame->getScene()->addItem(DisplayOptionsButton);
     MMgame->getScene()->addItem(Close);
+
+    connect(playButton,SIGNAL(clicked()),MMgame,SLOT(start()));
+    connect(DisplayOptionsButton,SIGNAL(clicked()),this,SLOT(displayOptions()));
     connect(Close,SIGNAL(clicked()),MMgame,SLOT(closeGame()));
+
 
 }
 
@@ -72,6 +75,7 @@ void MainMenu::displayOptions(){
     MMgame->getScene()->addItem(option1Button);
     MMgame->getScene()->addItem(option2Button);
     MMgame->getScene()->addItem(option3Button);
+
     connect(option4Button, SIGNAL(clicked()),this,SLOT(displayStart()));
     connect(option1Button, SIGNAL(clicked()),this,SLOT(DOption1()));
     connect(option2Button, SIGNAL(clicked()),this,SLOT(DOption2()));
