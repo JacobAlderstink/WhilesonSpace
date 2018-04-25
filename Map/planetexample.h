@@ -5,7 +5,7 @@
 #include <planetsuperclass.h>
 #include <QGraphicsScene>
 
-class PlanetExample : PlanetSuperClass
+class PlanetExample : public PlanetSuperClass
 {
 
 public:

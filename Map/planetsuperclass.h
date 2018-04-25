@@ -2,7 +2,7 @@
 #define PLANETSUPERCLASS_H
 
 #include <QObject>
-#include "chuncklist.h"
+#include "chunck.h"
 #include <QGraphicsScene>
 
 class PlanetSuperClass: public QObject

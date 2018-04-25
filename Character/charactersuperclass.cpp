@@ -19,7 +19,7 @@ void CharacterSuperClass::Gravity()
 
 void CharacterSuperClass::MoveRight()
 {
-    if(MoveR == true)
+       if(MoveR == true)
         setPos(x()+velocityHor,y());
 }
 

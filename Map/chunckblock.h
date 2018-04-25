@@ -2,13 +2,25 @@
 #define CHUNCKBLOCK_H
 
 #include <QObject>
+#include <QGraphicsRectItem>
+#include "chunck.h"
+#include <QGraphicsScene>
 
-class ChunckBlock : public QObject
+class chunck;
+
+class ChunckBlock : public QObject, public QGraphicsRectItem
 {
     Q_OBJECT
 public:
-    explicit ChunckBlock(QObject *parent = nullptr);
+    ChunckBlock(chunck* chunckson, QGraphicsScene* scenepas);
 
+private:
+    QGraphicsScene* scene;
+    ChunckBlock* next;
+    int Y;
+    int X;
+
+    ChunckBlock();
 signals:
 
 public slots:
