@@ -24,5 +24,6 @@ public:
     void mainMenu();
 public slots:
     void start();
+    void closeGame();
 };
 #endif // GAME_H

@@ -43,6 +43,11 @@ void Game::start(){
 
 }
 
+void Game::closeGame()
+{
+ exit(1);
+}
+
 void Game::mainMenu(){
   interface = new MInterface(this);
 
