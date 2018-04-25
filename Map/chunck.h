@@ -12,13 +12,14 @@ public:
     int getStartingY();
     int getEndingY();
     int GetstartingX();
+    int endingY;
 private:
     QGraphicsScene* scene;
     int startingX;
     ChunckBlock* startChunck;
     chunck();
     int startingY;
-    int endingY;
+  //  int endingY;
     chunck* next;
 
 };

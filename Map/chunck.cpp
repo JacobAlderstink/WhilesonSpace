@@ -1,6 +1,7 @@
 #include "chunck.h"
 #include <stdlib.h>
-
+#include <iostream>
+using namespace std;
 chunck::chunck(){
 
 }
@@ -9,7 +10,7 @@ chunck::chunck(int planetSize, int yLowerBound, int yUpperBound, QGraphicsScene*
     chunck* source = this;
     chunck* start = this;
     scene= scenePass;
-    start->startingY=scene->height()-scene->width()/30;
+    start->startingY=scene->height() - scene->width()/600;
     for(int i = 0; i < planetSize; i++){
         start->startingX = scene->width()*i;
         int value = rand()%yUpperBound;
