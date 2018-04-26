@@ -9,7 +9,7 @@ class PlanetExample : public PlanetSuperClass
 {
 
 public:
-    PlanetExample(QGraphicsScene* scenePas);
+    PlanetExample(QGraphicsScene* scenePas, Game* game);
 };
 
 #endif // PLANETEXAMPLE_H

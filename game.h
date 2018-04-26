@@ -20,7 +20,8 @@ public:
     QGraphicsScene* getScene();
     QTimer *TimerGravity;
     double ratioConverter;
-
+    int viewWidth;
+    int viewHeight;
     void mainMenu();
 public slots:
     void start();

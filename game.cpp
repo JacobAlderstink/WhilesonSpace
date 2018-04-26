@@ -9,9 +9,11 @@ Game::Game()
  * Settings Screen
  * Pause Screen?
  */
+//    set
     //creating the scene
     scene = new QGraphicsScene();
-
+    viewWidth= 1920;
+    viewHeight=1080;
     scene->setSceneRect(0,0,1920,1080);
 
     //adding scene to view
@@ -38,8 +40,8 @@ void Game::start(){
     scene->addItem(Character);
     Character->setFlag(QGraphicsItem::ItemIsFocusable);
     Character->setFocus();
-
-    PlanetSuperClass* planet = new PlanetExample(scene);
+    centerOn(Character);
+    PlanetSuperClass* planet = new PlanetExample(scene, this);
 
 }
 
