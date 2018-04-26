@@ -8,14 +8,22 @@ void CharacterSuperClass::Gravity()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i = 0, n = colliding_items.size(); i<n; i++)
     {
+
         if(typeid(*(colliding_items[i])) == typeid(ChunckBlock))
         {
+            if(y()+rect().height() > colliding_items[i]->y())
+            {
+                setPos(x(),colliding_items[i]->y()-rect().height());
+            }
             if(GravityOn == true)
             {
-                GravityOn = false;
-                MoveU = false;
+            GravityOn = false;
+            MoveU = false;
             }
+            timeVarGravity = 0;
+        JumpCount = 0;
         }
+
     }
     if(GravityOn == true)
     {
@@ -34,7 +42,9 @@ void CharacterSuperClass::Gravity()
 void CharacterSuperClass::MoveRight()
 {
        if(MoveR == true)
-        setPos(x()+velocityHor,y());
+       {
+           setPos(x()+velocityHor,y());
+       }
 }
 
 void CharacterSuperClass::MoveDown()
@@ -45,7 +55,9 @@ void CharacterSuperClass::MoveDown()
 void CharacterSuperClass::MoveLeft()
 {
     if(MoveL == true)
+    {
         setPos(x()-velocityHor,y());
+    }
 }
 
 void CharacterSuperClass::MoveUp()
@@ -90,6 +102,7 @@ void CharacterSuperClass::keyPressEvent(QKeyEvent *event)
     {
         //move Right
         MoveR = true;
+        GravityOn = true;
 
     }
     if(event->key() == Qt::Key_S)
@@ -101,11 +114,12 @@ void CharacterSuperClass::keyPressEvent(QKeyEvent *event)
     {
         //move Left
         MoveL = true;
+        GravityOn = true;
     }
     if(event->key() == Qt::Key_W)
     {
         //Move Up
-        if(JumpCount < 400)
+        if(JumpCount < 2)
         {
             MoveU = true;
             timeVarGravity = 0;
