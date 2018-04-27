@@ -116,6 +116,7 @@ void CharacterSuperClass::keyPressEvent(QKeyEvent *event)
     }
     if(event->key() == Qt::Key_Space)
     {
+        //Chargame->getScene()->setSceneRect();
         Chargame->mainMenu();
     }
 }

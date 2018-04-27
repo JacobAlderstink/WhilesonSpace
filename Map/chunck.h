@@ -16,14 +16,14 @@ public:
     int GetstartingX();
     int endingY;
     static int blocksPerChunck;
+    ChunckBlock* startChunckBlock;
 private:
+    static chunck* startChunck;
     Game* game;
     QGraphicsScene* scene;
     int startingX;
-    ChunckBlock* startChunck;
     chunck();
     int startingY;
-  //  int endingY;
     chunck* next;
 
 };

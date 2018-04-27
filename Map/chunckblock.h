@@ -8,6 +8,7 @@
 #include "game.h"
 
 class chunck;
+enum tribool {tru,fals,unin};
 
 class ChunckBlock : public QObject, public QGraphicsRectItem
 {
@@ -21,10 +22,14 @@ public:
         return X;
     }
     static int blocksPerChunk;
+     ChunckBlock* startingBlock;
 private:
     Game* game;
+    tribool Checker;
     QGraphicsScene* scene;
+    chunck *ParentChunck;
     ChunckBlock* next;
+    //ChunckBlock* startingBlock;
     int Y;
     int X;
 
@@ -32,6 +37,7 @@ private:
 signals:
 
 public slots:
+    void ChunckSceneUpdater();
 };
 
 #endif // CHUNCKBLOCK_H

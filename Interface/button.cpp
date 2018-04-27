@@ -7,7 +7,7 @@ Button::Button(QString name, Game* game, QGraphicsItem *parent): QGraphicsRectIt
 
 
     //draw the rect
-    setRect(0,0,game->getScene()->width()/10,game->getScene()->height()/23);
+    setRect(0,0,game->viewWidth/10,game->viewHeight/23);
     //QBrush brush;
     brushLeave.setStyle(Qt::SolidPattern);
     brushEnter.setStyle(Qt::SolidPattern);

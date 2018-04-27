@@ -10,6 +10,7 @@ MainMenu::MainMenu(Game* game)
 
 void MainMenu::displayStart(){
     MMgame->getScene()->clear();
+    MMgame->getScene()->setSceneRect(0,0,MMgame->viewWidth,MMgame->viewHeight);
 
     Button* playButton = new Button(QString("Play"),MMgame);
     int btnX = MMgame->getScene()->width()/2 - playButton->boundingRect().width()/2;
@@ -83,6 +84,8 @@ void MainMenu::displayOptions(){
 void MainMenu::DOption1(){
     MMgame->getScene()->setSceneRect(0,0,3840,2160);
     MMgame->ratioConverter = MMgame->getScene()->width()/2160.0;
+    MMgame->viewHeight = 2160;
+    MMgame->viewWidth=3840;
     displayOptions();
 
 }
@@ -90,7 +93,9 @@ void MainMenu::DOption1(){
 void MainMenu::DOption2(){
     MMgame->getScene()->setSceneRect(0,0,1920,1080);
     MMgame->ratioConverter = MMgame->getScene()->width()/2160.0;
-displayOptions();
+    MMgame->viewHeight = 1080;
+    MMgame->viewWidth=1920;
+    displayOptions();
 
 
 }
@@ -98,7 +103,9 @@ displayOptions();
 void MainMenu::DOption3(){
     MMgame->getScene()->setSceneRect(0,0,1080,720);
     MMgame->ratioConverter = MMgame->getScene()->width()/2160.0;
-displayOptions();
+    MMgame->viewHeight = 720;
+    MMgame->viewWidth=1080;
+    displayOptions();
 
 
 }

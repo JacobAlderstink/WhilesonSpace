@@ -5,7 +5,8 @@
 #include <QGraphicsScene>
 #include "minterface.h"
 #include <QTimer>
-
+#include <charactersuperclass.h>
+class CharacterSuperClass;
 class MInterface;
 class Game: public QGraphicsView
 {
@@ -16,6 +17,7 @@ private:
 
 
 public:
+    CharacterSuperClass* Character;
     Game();
     QGraphicsScene* getScene();
     QTimer *TimerGravity;
